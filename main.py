@@ -14,7 +14,7 @@ import os
 import warnings 
 warnings.filterwarnings('ignore')
 
-load_dotenv()
+#load_dotenv()
 
 
 # Configure Streamlit page settings
