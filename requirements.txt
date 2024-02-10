@@ -1,3 +1,6 @@
 python-dotenv==1.0.1
 google-generativeai==0.3.2
-streamlit==1.30.0
+streamlit==1.31.0
+langchain==0.1.6
+langchain-google-genai==0.0.8
+pinecone-client==3.0.2
