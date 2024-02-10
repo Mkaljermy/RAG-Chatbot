@@ -16,9 +16,6 @@ warnings.filterwarnings('ignore')
 
 #load_dotenv()
 
-st.write("PINECONE_API_KEY:", st.secrets["PINECONE_API_KEY"])
-st.write("GOOGLE_API_KEY:", st.secrets["GOOGLE_API_KEY"])
-st.write("My cool secrets:", st.secrets["my_cool_secrets"]["things_i_like"])
 
 # And the root-level secrets are also accessible as environment variables:
 st.write(
@@ -38,12 +35,12 @@ st.set_page_config(
 )
 
 GOOGLE_API_KEY='AIzaSyB-C5_2h5nQfIBUYKjBxKs_m55lWTRDnRg'
-pinecone_api_key='5471e559-8220-4014-ac6a-9620a5172f3a'
+PINECONE_API_KEY='5471e559-8220-4014-ac6a-9620a5172f3a'
 
 
 st.title("Courses RAG 📚")
 
-pc = pc(api_key=pinecone_api_key)
+pc = pc(api_key=PINECONE_API_KEY)
 index = pc.Index("mychatpot")
 
 def get_answer(query):
