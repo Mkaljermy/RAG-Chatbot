@@ -16,6 +16,19 @@ warnings.filterwarnings('ignore')
 
 #load_dotenv()
 
+st.write("PINECONE_API_KEY:", st.secrets["PINECONE_API_KEY"])
+st.write("GOOGLE_API_KEY:", st.secrets["GOOGLE_API_KEY"])
+st.write("My cool secrets:", st.secrets["my_cool_secrets"]["things_i_like"])
+
+# And the root-level secrets are also accessible as environment variables:
+st.write(
+    "Has environment variables been set:",
+    os.environ["GOOGLE_API_KEY"] == st.secrets["GOOGLE_API_KEY"],
+    os.environ["PINECONE_API_KEY"] == st.secrets["PINECONE_API_KEY"],
+
+)
+
+
 
 # Configure Streamlit page settings
 st.set_page_config(
