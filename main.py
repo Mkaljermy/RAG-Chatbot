@@ -14,17 +14,7 @@ import os
 import warnings 
 warnings.filterwarnings('ignore')
 
-#load_dotenv()
-
-
-# And the root-level secrets are also accessible as environment variables:
-st.write(
-    "Has environment variables been set:",
-    os.environ["GOOGLE_API_KEY"] == st.secrets["GOOGLE_API_KEY"],
-    os.environ["PINECONE_API_KEY"] == st.secrets["PINECONE_API_KEY"],
-
-)
-
+load_dotenv()
 
 
 # Configure Streamlit page settings
@@ -35,12 +25,12 @@ st.set_page_config(
 )
 
 GOOGLE_API_KEY='AIzaSyB-C5_2h5nQfIBUYKjBxKs_m55lWTRDnRg'
-PINECONE_API_KEY='5471e559-8220-4014-ac6a-9620a5172f3a'
+pinecone_api_key='5471e559-8220-4014-ac6a-9620a5172f3a'
 
 
 st.title("Courses RAG 📚")
 
-pc = pc(api_key=PINECONE_API_KEY)
+pc = pc(api_key=pinecone_api_key)
 index = pc.Index("mychatpot")
 
 def get_answer(query):
