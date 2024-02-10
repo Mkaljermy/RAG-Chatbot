@@ -38,7 +38,10 @@ def get_answer(query):
     model = 'models/embedding-001'
     embed = GoogleGenerativeAIEmbeddings(google_api_key=GOOGLE_API_KEY,model=model)
 
-    vstore = Pinecone.from_existing_index(embedding=embed,index_name='mychatpot')
+    #vstore = Pinecone.from_existing_index(embedding=embed,index_name='mychatpot')
+    #retriever = vstore.as_retriever(k=10)
+
+    vstore = Pinecone(embedding=embed, index=index, text_key='text')
     retriever = vstore.as_retriever(k=10)
 
     llm = ChatGoogleGenerativeAI(model='gemini-pro', temperature=0.7 ,convert_system_message_to_human=True)
