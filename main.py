@@ -22,6 +22,10 @@ st.set_page_config(
     layout="centered",  # Page layout option
 )
 
+
+GOOGLE_API_KEY='AIzaSyB-C5_2h5nQfIBUYKjBxKs_m55lWTRDnRg'
+PINECONE_API_KEY='5471e559-8220-4014-ac6a-9620a5172f3a'
+
 #To get the Keys from streamlit secret
 os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY']
 os.environ['PINECONE_API_KEY'] = st.secrets['PINECONE_API_KEY']
