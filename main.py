@@ -1,8 +1,6 @@
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.vectorstores import Chroma
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain.document_loaders import PyPDFLoader
 from langchain.prompts import PromptTemplate
 from langchain.chains.question_answering import load_qa_chain
 from langchain.vectorstores import Pinecone
@@ -24,9 +22,7 @@ st.set_page_config(
     layout="centered",  # Page layout option
 )
 
-GOOGLE_API_KEY='AIzaSyB-C5_2h5nQfIBUYKjBxKs_m55lWTRDnRg'
-PINECONE_API_KEY='5471e559-8220-4014-ac6a-9620a5172f3a'
-
+#To get the Keys from streamlit secret
 os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY']
 os.environ['PINECONE_API_KEY'] = st.secrets['PINECONE_API_KEY']
 
